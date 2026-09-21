@@ -1,0 +1,41 @@
+TRAINING:
+python run_train.py --episodes 2500 
+python run_train.py --episodes 2500 --ddqn
+python run_train.py --episodes 2500 --d3qn
+
+LOAD TRAINED MODELS:
+python run_loadmodel.py --model models/model_stageX-X.pth 
+python run_loadmodel.py --model models/model_stageX-X.pth --ddqn
+python run_loadmodel.py --model models/model_stageX-X.pth --d3qn
+
+
+
+
+
+
+
+
+
+RUN MODEL ON TRAINING OBSTACLES (Evaluate):
+python run_loadmodel.py --model TRAINED_DATA/Main_Training/D3QN-1.pth --allstage --episodes 10 --d3qn 
+
+RUN MODEL ON 42 TESTER STAGES (42 Tester Scenatios):
+python run_loadmodel.py --model TRAINED_DATA/Robustness_Tests/Models/Run1/D3QN.pth --allstage --episodes 42 --d3qn --tester
+
+RUN MODEL ON CUSTOM CONTROLLED STAGE (add any obstacles while running):
+python run_loadmodel.py --model TRAINED_DATA/Main_Training/D3QN-1.pth --episodes 100 --d3qn --experiment
+
+RUN MODEL ON RANDOM 50-SET OBSTACLE STAGE:
+python run_loadmodel.py --model TRAINED_DATA/Main_Training/D3QN-1.pth --episodes 100 --d3qn  --random
+
+
+
+
+
+
+
+
+NOTES: 
+- To change/edit obstacles, edit from config_obstacle.py (change the "OBSTACLES" variable number value)
+- To change/edit reward, edit from config_reward.py 
+- When loading a model using "--model" tag, for DDQN and D3QN models use extra tags such as "--DDQN" "--D3QN" for it to work properly. For normal DQN, there is no need to add extra tags.

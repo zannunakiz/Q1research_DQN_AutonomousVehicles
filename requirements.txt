@@ -1,0 +1,12 @@
+# DQN Car Navigation - Required Packages
+# Install with: pip install -r requirements.txt
+
+# Deep Learning Framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Numerical Computing
+numpy>=1.24.0
+
+# Visualization
+pygame>=2.5.0
